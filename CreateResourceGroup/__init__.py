@@ -15,7 +15,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             return func.HttpResponse("Missing parameters.", status_code=400)
 
         credential = DefaultAzureCredential()
-        subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+        # subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+        subscription_id="091adfdd-217d-45e3-a6c5-644b880117ab"
         resource_client = ResourceManagementClient(credential, subscription_id)
 
         result = resource_client.resource_groups.create_or_update(
